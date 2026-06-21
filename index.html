@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate custom QR codes instantly. Choose colors, sizes, and error correction levels. Download as PNG.">
+    <title>QR Code Generator — Create & Download Custom QR Codes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="hero" id="hero-header">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                    <rect x="5" y="5" width="8" height="8" rx="1" fill="currentColor"/>
+                    <rect x="24" y="2" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                    <rect x="27" y="5" width="8" height="8" rx="1" fill="currentColor"/>
+                    <rect x="2" y="24" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                    <rect x="5" y="27" width="8" height="8" rx="1" fill="currentColor"/>
+                    <rect x="24" y="24" width="4" height="4" rx="0.5" fill="currentColor"/>
+                    <rect x="30" y="24" width="4" height="4" rx="0.5" fill="currentColor"/>
+                    <rect x="24" y="30" width="4" height="4" rx="0.5" fill="currentColor"/>
+                    <rect x="34" y="30" width="4" height="4" rx="0.5" fill="currentColor"/>
+                    <rect x="30" y="34" width="4" height="4" rx="0.5" fill="currentColor"/>
+                    <rect x="20" y="20" width="2" height="2" fill="currentColor" opacity="0.5"/>
+                </svg>
+                <span class="logo-text">QR Forge</span>
+            </div>
+            <p class="hero-subtitle">Generate beautiful, customizable QR codes in seconds</p>
+        </header>
+
+        <div class="app-grid">
+            <!-- Controls Panel -->
+            <section class="panel controls-panel" id="controls-panel">
+                <h2 class="panel-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    Configuration
+                </h2>
+
+                <!-- Content Input -->
+                <div class="control-group" id="content-group">
+                    <label class="control-label" for="qr-content">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                        Content
+                    </label>
+                    <textarea id="qr-content" class="input-field textarea" placeholder="Enter URL, text, email, phone number..." rows="3">https://example.com</textarea>
+                    <span class="char-count" id="char-count">19 / 2953</span>
+                </div>
+
+                <!-- Quick Templates -->
+                <div class="control-group" id="templates-group">
+                    <label class="control-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        Quick Templates
+                    </label>
+                    <div class="template-chips">
+                        <button class="chip" data-template="url" id="chip-url">🔗 URL</button>
+                        <button class="chip" data-template="email" id="chip-email">📧 Email</button>
+                        <button class="chip" data-template="phone" id="chip-phone">📱 Phone</button>
+                        <button class="chip" data-template="wifi" id="chip-wifi">📶 WiFi</button>
+                        <button class="chip" data-template="text" id="chip-text">📝 Text</button>
+                    </div>
+                </div>
+
+                <!-- Colors -->
+                <div class="control-group" id="colors-group">
+                    <label class="control-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.955 9.955 0 0 0 12 22z"/></svg>
+                        Colors
+                    </label>
+                    <div class="color-row">
+                        <div class="color-picker-wrapper">
+                            <label for="fg-color" class="color-sub-label">Foreground</label>
+                            <div class="color-input-group">
+                                <input type="color" id="fg-color" class="color-input" value="#ffffff">
+                                <input type="text" id="fg-color-hex" class="hex-input" value="#ffffff" maxlength="7">
+                            </div>
+                        </div>
+                        <div class="color-picker-wrapper">
+                            <label for="bg-color" class="color-sub-label">Background</label>
+                            <div class="color-input-group">
+                                <input type="color" id="bg-color" class="color-input" value="#0a0a1a">
+                                <input type="text" id="bg-color-hex" class="hex-input" value="#0a0a1a" maxlength="7">
+                            </div>
+                        </div>
+                        <button class="swap-btn" id="swap-colors" title="Swap colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                        </button>
+                    </div>
+                    <div class="preset-colors" id="preset-colors">
+                        <button class="preset-swatch" data-fg="#ffffff" data-bg="#0a0a1a" title="White on Dark" style="background: linear-gradient(135deg, #ffffff 50%, #0a0a1a 50%)"></button>
+                        <button class="preset-swatch" data-fg="#000000" data-bg="#ffffff" title="Classic" style="background: linear-gradient(135deg, #000000 50%, #ffffff 50%)"></button>
+                        <button class="preset-swatch" data-fg="#6c5ce7" data-bg="#0a0a1a" title="Purple Glow" style="background: linear-gradient(135deg, #6c5ce7 50%, #0a0a1a 50%)"></button>
+                        <button class="preset-swatch" data-fg="#00b894" data-bg="#0a0a1a" title="Emerald" style="background: linear-gradient(135deg, #00b894 50%, #0a0a1a 50%)"></button>
+                        <button class="preset-swatch" data-fg="#e17055" data-bg="#2d1b14" title="Sunset" style="background: linear-gradient(135deg, #e17055 50%, #2d1b14 50%)"></button>
+                        <button class="preset-swatch" data-fg="#0984e3" data-bg="#0a0a1a" title="Ocean" style="background: linear-gradient(135deg, #0984e3 50%, #0a0a1a 50%)"></button>
+                        <button class="preset-swatch" data-fg="#fdcb6e" data-bg="#1a1507" title="Gold" style="background: linear-gradient(135deg, #fdcb6e 50%, #1a1507 50%)"></button>
+                        <button class="preset-swatch" data-fg="#e84393" data-bg="#1a0a14" title="Pink" style="background: linear-gradient(135deg, #e84393 50%, #1a0a14 50%)"></button>
+                    </div>
+                </div>
+
+                <!-- Size -->
+                <div class="control-group" id="size-group">
+                    <label class="control-label" for="qr-size">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        Size
+                        <span class="size-value" id="size-value">256 × 256</span>
+                    </label>
+                    <input type="range" id="qr-size" class="range-slider" min="128" max="512" value="256" step="16">
+                    <div class="range-labels">
+                        <span>128px</span>
+                        <span>512px</span>
+                    </div>
+                </div>
+
+                <!-- Error Correction -->
+                <div class="control-group" id="ec-group">
+                    <label class="control-label">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Error Correction
+                    </label>
+                    <div class="ec-buttons">
+                        <button class="ec-btn" data-level="L" id="ec-low">
+                            <span class="ec-level">L</span>
+                            <span class="ec-desc">7% recovery</span>
+                        </button>
+                        <button class="ec-btn active" data-level="M" id="ec-medium">
+                            <span class="ec-level">M</span>
+                            <span class="ec-desc">15% recovery</span>
+                        </button>
+                        <button class="ec-btn" data-level="Q" id="ec-quartile">
+                            <span class="ec-level">Q</span>
+                            <span class="ec-desc">25% recovery</span>
+                        </button>
+                        <button class="ec-btn" data-level="H" id="ec-high">
+                            <span class="ec-level">H</span>
+                            <span class="ec-desc">30% recovery</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview Panel -->
+            <section class="panel preview-panel" id="preview-panel">
+                <h2 class="panel-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    Preview
+                </h2>
+
+                <div class="qr-preview-area" id="qr-preview-area">
+                    <div class="qr-canvas-wrapper" id="qr-canvas-wrapper">
+                        <canvas id="qr-canvas"></canvas>
+                    </div>
+                    <div class="qr-placeholder" id="qr-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="2" height="2"/><rect x="19" y="14" width="2" height="2"/><rect x="14" y="19" width="2" height="2"/><rect x="19" y="19" width="2" height="2"/></svg>
+                        <p>Enter content to generate QR code</p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="download-png">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PNG
+                    </button>
+                    <button class="btn btn-secondary" id="download-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        Download SVG
+                    </button>
+                    <button class="btn btn-ghost" id="copy-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                        Copy
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer" id="app-footer">
+            <div class="footer-creator">
+                <p class="creator-name">Raffin Davis Arikkatt</p>
+                <p class="creator-email"><a href="mailto:rda844604@gmail.com" id="email-link">rda844604@gmail.com</a></p>
+            </div>
+            <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer" class="footer-tagline-btn" id="digital-heroes-btn"><strong>Built for Digital Heroes</strong></a>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="toast-message">Copied to clipboard!</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
